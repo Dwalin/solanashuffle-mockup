@@ -78,7 +78,7 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
                         currentPage === 0 ? css._active : null,
                     )}
                     onClick={() => {
-                        currentPage !== 0 && store.loadLeaderBoard(currentMode, 0)
+                        currentPage !== 0 store.loadLeaderBoard(currentMode, 0)
                     }}
                 >
                     <div className={css.leaderboardPaginationTooltip}>

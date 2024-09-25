@@ -2,7 +2,7 @@ import "@/styles/globals.scss";
 import { AppProps } from "next/app";
 import React, { useEffect} from "react";
 import { NextPageContext } from 'next';
-import {initStore, StoreProvider, useStore} from "@/store/store";
+import {initStore, StoreProvider} from "@/store/store";
 import classNames from "classnames";
 import Head from "next/head";
 

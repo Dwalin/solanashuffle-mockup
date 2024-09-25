@@ -1,6 +1,4 @@
 import Leaderboard from "../src/Components/Leaderboard/Leaderboard";
-import LeaderboardPage from "./leaderboard";
-
 
 export default function Home() {
     return (
