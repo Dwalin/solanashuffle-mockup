@@ -54,6 +54,8 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
     const totalPages = Math.floor(totalResults / resultsPerPage) - ((totalResults % resultsPerPage) ? 0 : 1);
     const currentPage = currentLeaderboard?.pageNumber;
 
+    if (!currentLeaderboard) { return null; }
+
     return (
         <div className={css.leaderboardPaginationSizer}>
             <nav className={css.leaderboardPagination}>

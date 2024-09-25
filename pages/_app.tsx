@@ -41,7 +41,7 @@ App.getInitialProps = async ({ Component, ctx }: { Component: any, ctx: NextPage
     let pageProps = {};
 
     await Promise.all([
-        pageProps = (Component?.getInitialProps && await Component?.getInitialProps(ctx)) || {}
+        pageProps = (Component?.getInitialProps && await Component?.getInitialProps({ ...ctx, store })) || {}
     ]);
 
     return { pageProps: {...store, ...pageProps }};

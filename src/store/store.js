@@ -72,7 +72,6 @@ class Store {
   };
 
   async loadLeaderBoard(mode, page) {
-    console.log('loading leaderboard');
     this.leaderboard = this.leaderboard || {};
     this.leaderboard[mode] = await api.loadLeaderBoard({ mode, page });
   }
