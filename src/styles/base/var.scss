@@ -1,0 +1,40 @@
+:root {
+
+  --theme-background-dark: rgb(22, 22, 72);
+  --theme-background-medium: rgb(35, 34, 78);
+  --theme-background-medium-alternate: rgb(32, 31, 71);
+  --theme-background-light: rgb(43, 41, 86);
+
+  --button-background: rgb(109, 98, 252);
+
+  --global-width: 2000px;
+
+  --text-color-main: rgba(255, 255, 255, 1);
+  --text-color-secondary: rgb(108, 111, 165);
+  --text-color-accent: rgb(7, 210, 205);
+
+  --border-main: rgba(80, 80, 80, 0.1);
+  --border-main-darken: rgba(80, 80, 80, 0.2);
+
+  --module: 20px;
+
+  --border-radius-regular: 16px;
+  --border-radius-container: 32px;
+
+
+  --transition-main: all 500ms ease-out;
+  --transition-quick: all 250ms ease-out;
+
+  --shadow-I: rgba(0, 0, 0, 0.05);
+  --shadow-II: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+
+  --shadow-inset:
+          inset 0 -2px 8px var(--shadow-dark);
+
+  --shadow-container:
+      0 4px 1px -2px var(--shadow-I),
+      0 8px 2px -4px var(--shadow-I),
+      0 12px 8px -10px var(--shadow-I),
+      0 18px 16px -16px var(--shadow-II);
+}
