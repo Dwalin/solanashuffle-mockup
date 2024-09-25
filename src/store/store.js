@@ -1,4 +1,4 @@
-import {makeAutoObservable, runInAction} from "mobx";
+import {makeAutoObservable} from "mobx";
 import { enableStaticRendering } from "mobx-react";
 import { makePersistable, hydrateStore } from "mobx-persist-store";
 import { createContext, useContext } from "react";
@@ -16,7 +16,7 @@ class RootStore {
 }
 
 class Store {
-  constructor(rootStore) {
+  constructor() {
     makeAutoObservable(this, {}, {
       autoBind: true,
     });

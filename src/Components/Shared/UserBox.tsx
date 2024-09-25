@@ -2,7 +2,11 @@ import {observer} from "mobx-react";
 import React from "react";
 import css from "@/styles/UserBox.module.scss";
 
-const UserBox = observer(({ user }) => {
+type User = {
+    name: string;
+};
+
+const UserBox = observer(({ user }: { user: User }) => {
 
     return (
         <div className={css.userBox}>
@@ -21,7 +25,7 @@ const UserBox = observer(({ user }) => {
             </div>
 
             <div className={css.userMarker}>
-                {/*{Math.random() > 0.5 && '(You)'}*/}
+                {Math.random() > 0.5 && '(You)'}
             </div>
 
         </div>

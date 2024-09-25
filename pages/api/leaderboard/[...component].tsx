@@ -1,5 +1,4 @@
-const { uniqueNamesGenerator, colors, animals } = require('unique-names-generator');
-
+import { uniqueNamesGenerator, colors, animals } from 'unique-names-generator';
 
 const generateName = () => {
   return uniqueNamesGenerator({ dictionaries: [colors, animals], separator: ' ' });
@@ -20,7 +19,7 @@ export default async function handler(req, res) {
     const diff = total - lastResult;
 
     const pageArray = Array((diff <= resultsPerPage) ? diff : resultsPerPage).fill({})
-    .map(el => ({
+    .map(() => ({
       user: {},
       data: {
         totalGame: Math.floor(10000 * Math.random()),

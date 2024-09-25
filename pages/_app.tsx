@@ -1,12 +1,10 @@
 import "@/styles/globals.scss";
 import { AppProps } from "next/app";
-import React, {Component, useEffect} from "react";
+import React, { useEffect} from "react";
 import { NextPageContext } from 'next';
 import {initStore, StoreProvider, useStore} from "@/store/store";
 import classNames from "classnames";
 import Head from "next/head";
-import Sidebar from "@/Components/Shared/Sidebar";
-import Header from "@/Components/Shared/Header";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const isServer = !process.browser;
@@ -23,10 +21,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           <title>Solanashuffle</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
         </Head>
-
-        {/* Left here just in case */}
-        {/*<Header />*/}
-        {/*<Sidebar />*/}
 
         <StoreProvider store={store}>
           <>

@@ -1,11 +1,6 @@
 import Leaderboard from "@/Components/Leaderboard/Leaderboard";
 
-
-interface LeaderboardPageProps {
-    settings?: { mode: string; pageSize: number }
-}
-
-export default function LeaderboardPage({settings}: LeaderboardPageProps) {
+export default function LeaderboardPage() {
     return (
         <>
             <div className={"uiWidget"}>

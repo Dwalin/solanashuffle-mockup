@@ -108,14 +108,16 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
                         {Array(4).fill({}).map((a, ui) => {
                             const navigationArray = [ currentPage / 4 * 3, currentPage / 3, currentPage / 4, currentPage / 2 ]
                             return (
-                                <div
-                                    className={css.leaderboardPaginationLongNavigation}
-                                    onClick={() => {
-                                        store.loadLeaderBoard(currentMode, Math.floor(navigationArray[ui]))
-                                    }}
-                                >
-                                    {Math.floor(navigationArray[ui])}
-                                </div>
+                                <React.Fragment key={`pagination-${ui}`}>
+                                    <div
+                                        className={css.leaderboardPaginationLongNavigation}
+                                        onClick={() => {
+                                            store.loadLeaderBoard(currentMode, Math.floor(navigationArray[ui]))
+                                        }}
+                                    >
+                                        {Math.floor(navigationArray[ui])}
+                                    </div>
+                                </React.Fragment>
                             );
                         })}
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -230,14 +232,17 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
                             const targetRange = totalPages - currentPage;
                             const navigationArray = [targetRange / 4 * 3, targetRange / 3, targetRange / 4, targetRange / 2]
                             return (
-                                <div
-                                    className={css.leaderboardPaginationLongNavigation}
-                                    onClick={() => {
-                                        store.loadLeaderBoard(currentMode, Math.floor(currentPage + navigationArray[ui]))
-                                    }}
-                                >
-                                    {Math.floor(currentPage + navigationArray[ui])}
-                                </div>
+                                <React.Fragment key={`pagination-${ui}`}>
+                                    <div
+                                        className={css.leaderboardPaginationLongNavigation}
+                                        onClick={() => {
+                                            store.loadLeaderBoard(currentMode, Math.floor(currentPage + navigationArray[ui]))
+                                        }}
+                                    >
+                                        {Math.floor(currentPage + navigationArray[ui])}
+                                    </div>
+                                </React.Fragment>
+
                             );
                         })}
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
