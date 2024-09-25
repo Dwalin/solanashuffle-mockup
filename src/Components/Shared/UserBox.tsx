@@ -25,7 +25,7 @@ const UserBox = observer(({ user }: { user: User }) => {
             </div>
 
             <div className={css.userMarker}>
-                {Math.random() > 0.5 && '(You)'}
+                {/*{Math.random() > 0.5 && '(You)'}*/}
             </div>
 
         </div>
