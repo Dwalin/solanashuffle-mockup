@@ -3,7 +3,11 @@ import axios from "axios";
 
 const isServer = !process.browser;
 
-const baseURL = isServer ? 'http://localhost:3000/api' : '/api';
+const serverURL = process.env.SERVER || 'http://localhost:3000/api';
+
+const baseURL = isServer ? serverURL : '/api';
+
+
 const api = axios.create({
   baseURL,
   withCredentials: true,
