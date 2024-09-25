@@ -11,11 +11,11 @@ export default function Home() {
     );
 }
 
-Home.getInitialProps = async ({ store }) => {
+Home.getInitialProps = async ({ store }: any) => {
     try {
         await Promise.all([
-            await store.loadLeaderBoard('daily', 0),
-            await store.loadLeaderBoard('total', 0),
+            await store?.loadLeaderBoard('daily', 0),
+            await store?.loadLeaderBoard('total', 0),
         ]);
         return {...store};
     } catch (e) {

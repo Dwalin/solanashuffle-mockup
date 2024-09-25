@@ -11,7 +11,8 @@ export default function LeaderboardPage() {
     );
 }
 
-LeaderboardPage.getInitialProps = async ({ store }) => {
+
+LeaderboardPage.getInitialProps = async ({ store }: any) => {
     try {
         await Promise.all([
             await store.loadLeaderBoard('daily', 0),

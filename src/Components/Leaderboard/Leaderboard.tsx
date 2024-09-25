@@ -45,7 +45,7 @@ const SolanaIcon = () => (
 );
 
 const Pagination = observer(({ settings }: LeaderboardSettings) => {
-    const store = useStore();
+    const store:any = useStore();
 
     const currentMode = settings?.mode || 'daily';
     const currentLeaderboard = store?.leaderboard && store?.leaderboard[currentMode];
@@ -78,7 +78,7 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
                         currentPage === 0 ? css._active : null,
                     )}
                     onClick={() => {
-                        currentPage !== 0 store.loadLeaderBoard(currentMode, 0)
+                        currentPage !== 0 && store.loadLeaderBoard(currentMode, 0)
                     }}
                 >
                     <div className={css.leaderboardPaginationTooltip}>
@@ -290,10 +290,10 @@ const Pagination = observer(({ settings }: LeaderboardSettings) => {
 });
 
 const Leaderboard = observer(({settings}: LeaderboardSettings) => {
-    const store = useStore();
+    const store:any = useStore();
 
     const currentMode = settings.mode || 'daily';
-    const currentLeaderboard = store.leaderboard[currentMode];
+    const currentLeaderboard = store?.leaderboard[currentMode];
 
     return (
         <div className={classNames(css.leaderboardSizer)}>
@@ -344,7 +344,7 @@ const Leaderboard = observer(({settings}: LeaderboardSettings) => {
                             </div>
                         </div>
 
-                        {currentLeaderboard?.page?.map((a, ui) => {
+                        {currentLeaderboard?.page?.map((a:any, ui:any) => {
                             return (
                                 <React.Fragment key={`leaderboard-${ui}`}>
                                     <div className={classNames(css.leaderboardListItem)}>
@@ -371,7 +371,6 @@ const Leaderboard = observer(({settings}: LeaderboardSettings) => {
                                 </React.Fragment>
                             )
                         })}
-
                     </div>
 
                     <Pagination settings={settings} />

@@ -32,8 +32,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 }
 
-App.getInitialProps = async ({ Component, ctx }: { Component: AppProps, ctx: NextPageContext }) => {
-  const store = ctx.store = initStore();
+
+
+App.getInitialProps = async ({ Component, ctx }: { Component: any, ctx: NextPageContext }) => {
+  const store = initStore();
 
   try {
     let pageProps = {};

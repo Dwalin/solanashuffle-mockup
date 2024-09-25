@@ -1,20 +1,31 @@
 import { uniqueNamesGenerator, colors, animals } from 'unique-names-generator';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 const generateName = () => {
   return uniqueNamesGenerator({ dictionaries: [colors, animals], separator: ' ' });
 }
-export default async function handler(req, res) {
-  const component = req.query.component[0];
+
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse
+) {
+  const component = req?.query?.component && req?.query?.component[0];
 
   const resultsPerPage = 7;
 
   if (component === 'loadLeaderBoard') {
     const { mode = 'daily', page }: { mode: string, page: number } = req.body;
-
     const total = mode === 'daily' ? 28 : 152;
 
     const lastResult = page * resultsPerPage;
-    if (lastResult > total) { return res.send([]); }
+    if (lastResult > total) {
+      return res.send({
+        total,
+        resultsPerPage,
+        pageNumber: page,
+        page: [],
+      });
+    }
 
     const diff = total - lastResult;
 
@@ -27,9 +38,8 @@ export default async function handler(req, res) {
         volume: Math.floor(10000 * Math.random()),
       },
     }))
-    .reduce((page, entry) => {
+    .reduce((page: any, entry) => {
       entry.user = { name: generateName() }
-      console.log(entry)
       page.push(entry);
       return page;
     }, []);
@@ -44,7 +54,7 @@ export default async function handler(req, res) {
     return res.send(output);
   }
 
-  return res.json('error');
+  return res.send({});
 }
 
 export const config = {
