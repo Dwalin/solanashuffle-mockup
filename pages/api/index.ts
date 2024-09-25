@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-const { uniqueNamesGenerator, colors, animals } = require('unique-names-generator');
 
 type Data = {
   name: string;
