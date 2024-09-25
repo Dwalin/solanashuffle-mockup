@@ -19,9 +19,9 @@ Open [24hr leaderboard](http://localhost:3000/leaderboard/24h) with your browser
 Open [All time leaderboard](http://localhost:3000/leaderboard/all-time) with your browser to see the result.
 
 ## Live version
-Open [24hr leaderboard](http://localhost:3000/leaderboard/24h) with your browser to see the result.
+Open [24hr leaderboard](https://solanashuffle-mockup.vercel.app/leaderboard/24h) with your browser to see the result.
 
-Open [All time leaderboard](http://localhost:3000/leaderboard/all-time) with your browser to see the result.
+Open [All time leaderboard](https://solanashuffle-mockup.vercel.app/leaderboard/all-time) with your browser to see the result.
 
 ## Notes
 
